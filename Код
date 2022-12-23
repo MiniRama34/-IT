@@ -1,0 +1,42 @@
+#include <iostream>
+#include <Windows.h>
+#include <cmath>
+#include <utility>
+#include <algorithm>
+#include <ctime>
+#include <iomanip>
+#include <conio.h>
+#include <numeric>
+ 
+using namespace std;
+ 
+int main()
+{
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
+	//Розрахунок суми(Початок)//
+	void function_suma(); 
+	{
+		int arr[] = { 0, 1, 1, 2, 2 };
+		int sum = accumulate(begin(arr), end(arr), 0, plus<int>());
+		cout << "Сума елементів масива -" << sum << endl;
+	}
+	///Розрахунок суми(Кінець)///
+//Розставлення цифр масива(Початок)//
+	const int length = 12;
+	int array[length] = { 0,0,0,0,1,1,1,1,2,2,2,2 };
+	for (int startIndex = 0; startIndex < length - 1; ++startIndex)
+	{
+		int smallestIndex = startIndex;
+		for (int currentIndex = startIndex + 1; currentIndex < length; ++currentIndex)
+		{
+			if (array[currentIndex] < array[smallestIndex])
+				smallestIndex = currentIndex;
+		}
+		swap(array[startIndex], array[smallestIndex]);
+	}
+	for (int index = 0; index < length; ++index)
+		cout << array[index] << ' ';
+	
+	//Розставлення цифр масива(Кінець)//
+}
